@@ -1,0 +1,139 @@
+a{
+  text-decoration: none;
+}
+:root {
+  --Color-title: #04280f;
+  --Color-font: #0c0e02;
+  --Color-menu: #384503;
+  --branco-principal: #FFFFFF;
+  --cinza-secundario: #C0C0C0;
+}
+
+* {
+  margin: 0;
+  padding: 5;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  /*background-image: url("img/fundo.png");*/
+  background-image: linear-gradient(to bottom,
+      rgba(66, 28, 2, 0.2),
+      rgba(66, 28, 2, 0.5)),
+    url(https://images.unsplash.com/photo-1495904786722-d2b5a19a8535?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2096&q=80);
+  background-size: cover;
+}
+
+/**********************/
+/* HEADER             */
+/**********************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.2rem 10rem 0 rgba(33, 37, 41, 0.025);
+  padding: 2.4rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.logo-background {
+  content: "";
+  display: block;
+  width: 9rem;
+  background-color: var(--Color-title);
+  padding: 1.0rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2.4rem;
+}
+
+.nav-link {
+  background-color: var(--cinza-secundario);
+  border: 2px solid var(--Color-font);
+  text-decoration: none;
+  padding: 0.3em 0.6em 0.3em 0.6em;
+  color: var(--Color-title);
+}
+.nav-link:hover{
+  background-color: var(--Color-menu);
+  color: var(--branco-principal);
+}
+.container__botao {
+  background-color: transparent;
+  color: var(--Color-title);
+  border: 2px solid var(--branco-principal);
+  /* tirar sublinhado do link */
+  text-decoration: none;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 500;
+  /* color: #fff; */
+}
+
+/* .nav-link:hover,
+.nav-link:active {
+  color: var(--Color-menu);
+  
+} */
+
+/**********************/
+/* HERO               */
+/**********************/
+.section-hero {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  margin-left: 2.4rem;
+}
+
+.heading-title {
+  font-size: 5.2rem;
+  font-weight: 900;
+  color: var(--Color-title);
+  margin-bottom: 0.0rem;
+}
+
+.heading-text {
+  font-size: 1.9rem;
+  line-height: 1.0;
+  color: var(--Color-font);
+}
+
+.hero-img {
+  width: 100%;
+}
+
+/**********************/
+/* FOOTER             */
+/**********************/
+.footer-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fde1cd;
+  margin-bottom: 0.4rem;
+}
+
+.mapa {
+  margin-left: 30px;
+  margin-right: 30px;
+}

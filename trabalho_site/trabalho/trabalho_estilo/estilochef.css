@@ -1,0 +1,73 @@
+section{
+   margin-top: 30px;
+   background-color:  rgba(31, 73, 15, 0);
+   margin-right: 30px;
+   margin-left: 30px;
+   margin-bottom: 50px;
+   box-shadow: rgba(0, 0, 0, 0) 5px 5px 5px 2px ;
+}
+.text{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+.rod{
+    display:inline-block;
+    float: right;
+    margin-right: 15px;
+
+}
+p{
+    font-size: 20px;
+    margin: 15px;
+    color: rgba(245, 245, 245, 0.892);
+    font-style: arial;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.moldura{
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.613) 4px 4px 4px 4px ;
+    background-color: rgb(39, 58, 34);
+}
+h2{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-style: arial;
+    font-size: 30px;
+}
+@font-face {
+    font-family:PixelifySansb;
+    src: url(../static/PixelifySans-Bold.ttf);
+}
+
+.font{
+    font-size: 40px;
+    font-family:PixelifySansb;
+    text-transform: uppercase;
+}
+.fonts{
+    font-size: 30px;
+    font-family:PixelifySansb;
+    text-transform: uppercase;
+}
+.rod2{
+    display:inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 5px;
+}
+h1{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-style: arial;
+    font-size: 20px;
+    color: white;
+}
+.imgs{
+    margin-left: 20px;
+    margin-right: 60px;
+
+}

@@ -1,0 +1,103 @@
+.wrapper{
+  display: flex;
+    flex-flow: row wrap;
+    
+}
+.wrapper> *{
+  
+  
+  flex: 1 100%;
+ 
+}
+a{
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 5;
+    box-sizing: border-box;
+  }
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.314) 5px 10px 5px;
+    padding-top: 10px;
+    background-color:rgb(39, 58, 34);
+    
+  }
+  .logo-background{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  body{
+    background-image: linear-gradient(to bottom,
+        rgba(66, 28, 2, 0.2),
+        rgba(66, 28, 2, 0.5)),
+      url(imagens_site/backg.png);
+    background-size: cover;
+  }
+  section{
+    margin-left: 15px;
+  }
+  .logo {
+    display: flex ;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    padding-left: 50px;
+  }
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2.4rem;
+    padding-right: 100px;
+  }
+  @font-face {
+    font-family:PixelifySansr;
+    src: url(../trabalho/static/PixelifySans-Regular.ttf);
+  }
+  .nav-link {
+    background-color: var(--cinza-secundario);
+    border: 2px solid var(--Color-font);
+    text-decoration: none;
+    padding: 0.3em 0.6em 0.3em 0.6em;
+    color:   rgba(142, 193, 90, 0.922);
+    font-family: PixelifySansr;
+    font-size: 20px;
+   
+  }
+  
+  .nav-link:hover{
+    background-color: var(--Color-menu);
+    color:white;
+  }
+  .container__botao {
+    background-color: transparent;
+    color: var(--Color-title);
+    border: 2px solid var(--branco-principal);
+    /* tirar sublinhado do link */
+    text-decoration: none;
+  }
+  
+  .nav-link:link,
+  .nav-link:visited {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    font-style: arial;
+    text-transform: uppercase;
+   
+    /* color: #fff; */
+  }
+ footer{
+    background-color: rgb(39, 58, 34) ;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 35px;
+    left: 0px;
+    font-style: arial;
+    box-shadow: rgba(0, 0, 0, 0.46) 10px 5px 5px 15px;
+ }
