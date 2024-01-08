@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+
+    <section>
+        <div>
+            Preencha com as informações a seguir:
+           <div>
+              <p>Ano de Nascimento:
+                   <input type="number" name="ano" id="ano">
+              </p>
+              <p>Sexo: 
+                   <input type="radio" name="radsex" id="mas" checked>Masculino
+                   <input type="radio" name="radsex" id="fem">Feminino
+              </p>
+              <p>
+                <input type="button" value="verificar" onclick="verificar()">
+              </p>
+        </div>
+        <div id="res">
+            Preencha com o dados acima para ver o resultado!
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; Curso em video</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

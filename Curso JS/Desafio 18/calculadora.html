@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        Calculadora <p></p>
+        <div>Valor 1: <input type="number" name="val1" id="txtval1"></p>
+            Valor 2: <input type="number" name="val2" id="txtval2"></p>
+            Operação: <select name="Opera" id="txtopera">
+                <option value=""></option>
+                <option value="ad">Adição</option>
+                <option value="sub">Subtração</option>
+                <option value="di">Divisão</option>
+                <option value="mul">Multiplicação</option></select>
+                
+            <input type="button" value="calcular" onclick="verificar()"></p>
+            Resultado: <input type="text" name="rspt" id="txtrspt">
+        </div>
+        <div id="res"></div>
+    </section>
+    
+</body>
+<script src="script.js"></script>
+</html>

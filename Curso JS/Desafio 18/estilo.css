@@ -1,0 +1,11 @@
+body{
+    background: rgb(49, 92, 199);
+}
+section{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 10px 5px black;
+    width: 400px;
+    padding: 10pt;
+    margin: auto;
+}

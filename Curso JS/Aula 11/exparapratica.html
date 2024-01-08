@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual a sua nacionalidade</title>
+    <style>
+        body{
+            background: rgb(112, 3, 112);
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voce é de qual país?</h1>
+    voce é brasileiro?
+    <input type="text" name="nas" id="nas">
+    <input type="button" value="verificar" onclick="analisar()">
+    <div id="res">
+
+    </div>
+    <script>
+
+        function analisar(){
+            var nac = window.document.getElementById("nas")
+            var res = window.document.getElementById("res")
+            var n = String(nac.value)
+            if(n == "Brasil"){
+               res.innerHTML = "voce é braleiro" }else{res.innerHTML = "voce nao é brasileiro"}
+
+        }     
+    </script>
+    
+</body>
+</html>

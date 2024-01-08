@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    margin-left: 70px;
+}
+body{
+    background-color: grey;
+    
+}
+header{
+    background-image: url('capa.png');
+   
+    padding: 180px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+#links{
+    margin-top: 10px;
+    background-color: rgb(209, 204, 204);
+    padding: 25px;
+    margin-right: 237px;
+    margin-bottom: 5px;
+    
+    
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 2px;
+    margin-right: 5px;
+    color: rgb(100, 99, 99);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#text{
+    background-color: beige;
+    margin-right: 237px;
+}
+h2{
+    color:rgb(100, 99, 99);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 6px;
+}
+#ronaldo{
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

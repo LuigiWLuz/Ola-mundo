@@ -1,0 +1,127 @@
+*{
+    font-family: Wellfleet-regular;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(
+        90deg,
+        rgb(65, 107, 185) 0%,
+        rgb(212, 0, 255) 100%
+    )
+}
+#pvp,#pvia{
+    margin-top: 60px;
+    padding: 10px;
+    border-radius: 15px;
+
+
+}
+.escolhergamemode{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.side-panel {
+    text-align: center;
+}
+
+div {
+    display: block;
+    margin-bottom: 5px;
+}
+#title{
+    color: white;
+    font-size: 45px;
+   
+}
+#restart{
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgb(67, 9, 92);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+    border: #fff;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(67, 9, 92);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.cell:hover{
+    background-color: rgba(222, 51, 202, 0.501)
+}
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    text-align: center;
+    font-size:50px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.818);
+   
+}
+#all{
+    text-align: center;
+    display: block;
+   
+}
+#jog1_wins, #jog2_wins {
+    display: block;
+    margin-top: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+    
+}
+#textt,#player2{
+    font-weight: 100;
+}
+.mensagemvitoria{
+    visibility: hidden;
+    color: #fff;
+}
+@font-face {
+    font-family:Wellfleet-regular;
+    src: url(./fonts/LilitaOne-Regular.ttf);
+}
+
+.font{
+    font-size: 40px;
+    font-family:PixelifySansb;
+    text-transform: uppercase;
+}

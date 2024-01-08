@@ -1,0 +1,15 @@
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\bin\Debug\net8.0\Ola-mundo.exe
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\bin\Debug\net8.0\Ola-mundo.deps.json
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\bin\Debug\net8.0\Ola-mundo.runtimeconfig.json
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\bin\Debug\net8.0\Ola-mundo.dll
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\bin\Debug\net8.0\Ola-mundo.pdb
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.AssemblyInfoInputs.cache
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.AssemblyInfo.cs
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.csproj.CoreCompileInputs.cache
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.sourcelink.json
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.dll
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\refint\Ola-mundo.dll
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.pdb
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\Ola-mundo.genruntimeconfig.cache
+C:\Users\luigi\OneDrive\Área de Trabalho\MeusProjetos\Ola-mundo\obj\Debug\net8.0\ref\Ola-mundo.dll

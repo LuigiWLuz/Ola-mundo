@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio de tentativa</title>
+</head>
+<body>
+    <h1>Voce é de qual país?</h1>
+    <input type="text" name="txtnas" id="txtnas">
+    <input type="button" value="verificação" onclick="verificar()">
+    <div id = 'resp'></div>
+
+    <script>
+        function verificar(){
+           nasci.addEventListener('click', clicar)
+           var nasci = document.querySelector('id#txtnas')
+           var res = document.querySelector('div#resp')
+           if(nasci == Brasil){
+                resp.innerText += 'Voce é brasileiro!'
+           }else{
+            resp.innerText += 'voce não é brasileiro'
+           } 
+        }
+    </script>
+   
+</body>
+</html>
