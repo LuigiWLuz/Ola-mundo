@@ -1,21 +1,23 @@
-#include<iostream>
+#include <iostream>
 #include<stdlib.h>
 #include<windows.h>
+#include<cstdlib>
 using namespace std;
 
+void jvelha_menu();
 struct jg_velha{
     string game[3][3] = {{ " "," "," "},{" "," "," "},{" "," "," "}};
     int linha, coluna;
     char jogador;
 
-    //Este construtor inicializa as variaveis necessarias para um bom desempenho do restante do código.
+    //Este construtor inicializa as variaveis necessarias para um bom desempenho do restante do cï¿½digo.
     jg_velha() {
         jogador = 'X'; // cmc jogador em X
         coluna = -1;
         linha = -1;
     }
 
-    //Esta função chama a estrutura do jogo da velha.
+    //Esta funï¿½ï¿½o chama a estrutura do jogo da velha.
     void jogovelhachama(){
         if(verifica() == 1 || verifica() == -3 ){
 
@@ -42,10 +44,10 @@ struct jg_velha{
         joga();}
     }
 
-    //Esta função lê a linha/coluna em que o jogador deseja posicionar o X ou O.
+    //Esta funï¿½ï¿½o lï¿½ a linha/coluna em que o jogador deseja posicionar o X ou O.
     void joga(){
 
-        cout<< "Jogador " << jogador << "_" << endl;
+        cout<< "________Jogador " << jogador << "_______" << endl;
         do{
             if( linha != 1 && linha != 2 && linha != 3 && linha != -1)
                 cout << "Linha invalida, insira novamente..." << endl;
@@ -66,7 +68,7 @@ struct jg_velha{
             joga();
         }else{
             game[linha - 1][coluna - 1] = jogador;
-        //Este if verifica se há ganhador através da função "verifica()".
+        //Este if verifica se hï¿½ ganhador atravï¿½s da funï¿½ï¿½o "verifica()".
         if(verifica() == 1){
                 system("cls");
                 jogovelhachama();
@@ -79,7 +81,7 @@ struct jg_velha{
                 system("cls");
                 int main();
         }
-        //Este if verifica se há empate através da função "verifica()".
+        //Este if verifica se hï¿½ empate atravï¿½s da funï¿½ï¿½o "verifica()".
         if(verifica() == -3){
                 system("cls");
                 jogovelhachama();
@@ -103,7 +105,7 @@ struct jg_velha{
         }
     }
 
-    //Esta função vefifica todas as possibilidades de vitoria e empate.
+    //Esta funï¿½ï¿½o vefifica todas as possibilidades de vitoria e empate.
    int verifica(){
        //Verifica possiveis vitorias na Horizontal.
         for(int i = 0; i < 3; ++i){
@@ -119,7 +121,7 @@ struct jg_velha{
             }
         }
 
-        //Verifica se há Empate.
+        //Verifica se hï¿½ Empate.
         if(game[0][0] != " " && game[0][1] != " " && game[0][2] != " " && game[1][0] != " " && game[1][1] != " " && game[1][2] != " " && game[2][0] != " " && game[2][1] != " " && game[2][2] != " "){
             return -3;
         }
@@ -134,12 +136,12 @@ struct jg_velha{
 
 struct BNaval{
     int alternaplayer = 1;
-    int jogador;
+    int jogador, vencedor;
 
       string game[10][10],game2[10][10],gamemostra[10][10],gamemostrap1[10][10],gamemostrap2[10][10];
 
     BNaval() {
-        // Inicializando as matrizes com espaços em branco
+        // Inicializando as matrizes com espaï¿½os em branco
         for(int i = 0; i < 10; ++i) {
             for(int j = 0; j < 10; ++j) {
                 game[i][j] = " ";
@@ -407,6 +409,9 @@ struct BNaval{
     }
 
     bool verificabaixoT4p2(int linha, int coluna){
+
+
+
         bool posicao1 = false, posicao2 = false, posicao3 = false;
             for(int i = 1; i <= 3; ++i){
               if(game2[linha-1+i][coluna-1] == " "&& i==1){
@@ -485,8 +490,6 @@ struct BNaval{
                 }
     }
 
-
-
     void embarcacaop1(){
         int linha, coluna;
         char direcao;
@@ -495,7 +498,7 @@ struct BNaval{
         cout << "=========================" << endl;
         cout << "________Jogador 1________" << endl;
 
-        for(int k = 9; k < 10; k++){
+        for(int k = 0; k < 10; k++){
             if(k < 4){
                 cout << "Inserindo T1 (Um bloco): " <<endl;
                 cout << "Linha desejada (1 ao 10): " << endl;
@@ -638,7 +641,7 @@ struct BNaval{
                                     direcao = 'e';
                                 }
                                 else{
-                                    cout << "Direcao Indiponivel! Já existe um barco nessa posicao..." << endl;
+                                    cout << "Direcao Indiponivel! Jï¿½ existe um barco nessa posicao..." << endl;
                                     cout << "Insira a linha e coluna novamente!" << endl << endl;
                                     goto stop;
                                 }
@@ -1329,7 +1332,7 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'd');
                     }
-                     else if(linha-1 == 9 && coluna == 9) {
+                     else if(linha-1 >= 8 && coluna >= 8) {
                         do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -1724,8 +1727,7 @@ struct BNaval{
                         cin.ignore(80, '\n');
                 }
                 }
-                if(linha-1 >= 3 || linha-1 <=6 && coluna-1 > 6){
-                    if(linha-1 >= 3){
+                if(linha-1 > 3 && coluna-1 > 6){
                      do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -1761,7 +1763,7 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'e');
                     }
-                    else{
+                    else if(linha-1 < 3 && coluna-1 > 7) {
                             do {
                             cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -1797,8 +1799,8 @@ struct BNaval{
 
                             } while(direcao != 'b' && direcao != 'e');
                     }
-                }
-                else if(linha-1 >= 3 || linha-1 <=6 && coluna-1 < 3){
+
+                else if(linha-1 > 2 && linha-1 <6 && coluna-1 < 3){
                     if(linha-1 >= 3){
                      do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra esquerda!" << endl;
@@ -1835,7 +1837,8 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'd');
                     }
-                    else{
+                }
+                    else if(linha-1 < 3 && coluna-1 < 3) {
                             do {
                             cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra esquerda!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -1871,8 +1874,8 @@ struct BNaval{
 
                             } while(direcao != 'b' && direcao != 'd');
                     }
-            }else if(linha-1 > 6 && coluna-1 < 3 || coluna-1 > 6){
-                if(coluna-1 < 3){
+            else if(linha-1 > 6 && coluna-1 < 3 || coluna-1 > 6){
+                //if(coluna-1 < 3){
                     do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra esquerda!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -1906,8 +1909,9 @@ struct BNaval{
                                 goto retorna2;
                             }
 
-                    } while(direcao != 'c' && direcao != 'd');
-                }else{
+                      }while(direcao != 'c' && direcao != 'd');
+                    }
+                else if(linha-1 > 3 && coluna-1 > 7){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -1943,8 +1947,8 @@ struct BNaval{
 
                     } while(direcao != 'c' && direcao != 'e');
                 }
-            }else if(linha-1 < 3 && coluna-1 < 3 || coluna-1 > 6){
-                if(coluna-1 < 3){
+                else if(linha-1 < 3 && coluna-1 < 3 || coluna-1 > 6){
+                //if(coluna-1 < 3){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra esquerda!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -1979,7 +1983,7 @@ struct BNaval{
                             }
 
                     } while(direcao != 'b' && direcao != 'd');
-                }else{
+                }else if(linha-1 < 3 && coluna-1 > 3){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra direita!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -2015,7 +2019,7 @@ struct BNaval{
 
                     } while(direcao != 'b' && direcao != 'e');
                 }
-            }else{
+                else{
                         do{
                         cout << "Para que direcao: " << endl;
                         cout << "C - Cima | B - Baixo | E - Esquerda | D - Direita" << endl;
@@ -2079,7 +2083,7 @@ struct BNaval{
                                     direcao = 'e';
                                     cout << "Direcao indisponivel! Alterado para Esquerda!" << endl;
                                 }
-                                else if(verificabaixo(linha, coluna) != true && verificacima(linha, coluna) != true && verificadireita(linha, coluna) != true && verificaEsquerdaT4(linha, coluna) != true) {
+                                else if(verificabaixoT4(linha, coluna) != true && verificacimaT4(linha, coluna) != true && verificadireitaT4(linha, coluna) != true && verificaEsquerdaT4(linha, coluna) != true) {
                                 cout << "Direcao Indisponivel! Ja existe um barco nessa posicao..." << endl;
                                 cout << "Insira a linha e coluna novamente!" << endl << endl;
                                 goto retorna2;
@@ -2176,7 +2180,6 @@ struct BNaval{
          bnavalchama(jogador);
         }
 
-
     void embarcacaop2(){
         int linha, coluna;
         char direcao;
@@ -2185,7 +2188,7 @@ struct BNaval{
         cout << "=========================" << endl;
         cout << "________Jogador 2________" << endl;
 
-        for(int k = 9; k < 10; k++){
+        for(int k = 0; k < 10; k++){
             if(k < 4){
                 cout << "Inserindo T1 (Um bloco): " <<endl;
                 cout << "Linha desejada (1 ao 10): " << endl;
@@ -2328,7 +2331,7 @@ struct BNaval{
                                     direcao = 'e';
                                 }
                                 else{
-                                    cout << "Direcao Indiponivel! Já existe um barco nessa posicao..." << endl;
+                                    cout << "Direcao Indiponivel! Jï¿½ existe um barco nessa posicao..." << endl;
                                     cout << "Insira a linha e coluna novamente!" << endl << endl;
                                     goto stop;
                                 }
@@ -3019,7 +3022,7 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'd');
                     }
-                     else if(linha-1 == 9 && coluna == 9) {
+                     else if(linha-1 >= 8 && coluna >= 8) {
                         do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -3414,8 +3417,7 @@ struct BNaval{
                         cin.ignore(80, '\n');
                 }
                 }
-                if(linha-1 >= 3 || linha-1 <=6 && coluna-1 > 6){
-                    if(linha-1 >= 3){
+                if(linha-1 > 3 && coluna-1 > 6){
                      do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -3451,7 +3453,7 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'e');
                     }
-                    else{
+                    else if(linha-1 < 3 && coluna-1 > 7) {
                             do {
                             cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra direita!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -3487,8 +3489,8 @@ struct BNaval{
 
                             } while(direcao != 'b' && direcao != 'e');
                     }
-                }
-                else if(linha-1 >= 3 || linha-1 <=6 && coluna-1 < 3){
+
+                else if(linha-1 > 2 && linha-1 <6 && coluna-1 < 3){
                     if(linha-1 >= 3){
                      do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra esquerda!" << endl;
@@ -3525,7 +3527,8 @@ struct BNaval{
 
                         } while(direcao != 'c' && direcao != 'd');
                     }
-                    else{
+                }
+                    else if(linha-1 < 3 && coluna-1 < 3) {
                             do {
                             cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra esquerda!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -3561,8 +3564,8 @@ struct BNaval{
 
                             } while(direcao != 'b' && direcao != 'd');
                     }
-            }else if(linha-1 > 6 && coluna-1 < 3 || coluna-1 > 6){
-                if(coluna-1 < 3){
+            else if(linha-1 > 6 && coluna-1 < 3 || coluna-1 > 6){
+                //if(coluna-1 < 3){
                     do {
                             cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra esquerda!" << endl;
                             cout << "Para que direcao: " << endl;
@@ -3596,8 +3599,9 @@ struct BNaval{
                                 goto retorna2;
                             }
 
-                    } while(direcao != 'c' && direcao != 'd');
-                }else{
+                      }while(direcao != 'c' && direcao != 'd');
+                    }
+                else if(linha-1 > 3 && coluna-1 > 7){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para baixo nem pra direita!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -3633,8 +3637,8 @@ struct BNaval{
 
                     } while(direcao != 'c' && direcao != 'e');
                 }
-            }else if(linha-1 < 3 && coluna-1 < 3 || coluna-1 > 6){
-                if(coluna-1 < 3){
+                else if(linha-1 < 3 && coluna-1 < 3 || coluna-1 > 6){
+                //if(coluna-1 < 3){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra esquerda!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -3669,7 +3673,7 @@ struct BNaval{
                             }
 
                     } while(direcao != 'b' && direcao != 'd');
-                }else{
+                }else if(linha-1 < 3 && coluna-1 > 3){
                     do {
                         cout << "Nesta posicao a embarcacao nao pode ir para cima nem pra direita!" << endl;
                         cout << "Para que direcao: " << endl;
@@ -3705,7 +3709,7 @@ struct BNaval{
 
                     } while(direcao != 'b' && direcao != 'e');
                 }
-            }else{
+                else{
                         do{
                         cout << "Para que direcao: " << endl;
                         cout << "C - Cima | B - Baixo | E - Esquerda | D - Direita" << endl;
@@ -3769,7 +3773,7 @@ struct BNaval{
                                     direcao = 'e';
                                     cout << "Direcao indisponivel! Alterado para Esquerda!" << endl;
                                 }
-                                else if(verificabaixop2(linha, coluna) != true && verificacimap2(linha, coluna) != true && verificadireitap2(linha, coluna) != true && verificaEsquerdaT4p2(linha, coluna) != true) {
+                                else if(verificabaixoT4p2(linha, coluna) != true && verificacimaT4p2(linha, coluna) != true && verificadireitaT4p2(linha, coluna) != true && verificaEsquerdaT4p2(linha, coluna) != true) {
                                 cout << "Direcao Indisponivel! Ja existe um barco nessa posicao..." << endl;
                                 cout << "Insira a linha e coluna novamente!" << endl << endl;
                                 goto retorna2;
@@ -3866,22 +3870,47 @@ struct BNaval{
          bnavalchama(jogador);
         }
 
+    int pontosp1 = 0, pontosp2 = 0;
+
     void jogarp1(){
 
             int linha, coluna;
             do{
-                cout << "=====JOGADOR 1=====" << endl;
-                cout << " Faca sua jogada:" << endl;
-                cout << "Linha desejada (1 ao 10): " ;
-                cin >> linha;
-                cin.ignore(80,'\n');
-                cout << "Coluna desejada (1 ao 10): " ;
-                cin >> coluna;
-                cin.ignore(80,'\n');
+                do{
+                    cout << "=====JOGADOR 1=====" << endl;
+                    cout << " Faca sua jogada:" << endl;
+                    do{
+                        cout << "Linha desejada (1 ao 10): " ;
+                        cin >> linha;
+                        cin.ignore(80,'\n');
+                        if(linha < 1 || linha > 10){
+                            system("cls");
+                            cout << "Insira um numero valido, insira a linha novamente!" << endl;
+                        }
+                    }while(linha < 1 || linha > 10);
+                    do{
+                        cout << "Coluna desejada (1 ao 10): " ;
+                        cin >> coluna;
+                        cin.ignore(80,'\n');
+                        if(coluna < 1 || coluna > 10){
+                            system("cls");
+                            cout << "Insira um numero valido, insira a coluna novamente! " << endl;
+                        }
+                    }while(coluna < 1 || coluna > 10);
+
+
+
+                    if(game2[linha-1][coluna-1] == "F" || game2[linha-1][coluna-1] == "~"){
+                        system("cls");
+                        cout << "Essa jogada ja foi feita, jogue em uma outra posicao!" << endl;
+                    }
+                }while(game2[linha-1][coluna-1] == "F" || game2[linha-1][coluna-1] == "~");
 
                 if(game2[linha-1][coluna-1] != " "){
                     game2[linha-1][coluna-1] = "F";
-                    gamemostrap1[linha-1][coluna-1] = "F";
+                    gamemostrap2[linha-1][coluna-1] = "F";
+                    ++pontosp1;
+
 
                     cout << "-----------------------" << endl;
                     cout << "   ";
@@ -3896,11 +3925,12 @@ struct BNaval{
                         }else
                         cout << i +1<< "|";
                         for (int j = 0; j < 10 ;++j){
-                            if(j == 9){
-                                cout << gamemostrap1[i][j];
+                            if(gamemostrap2[i][j] == "~"){
+                                cout << "\e[0;34m"<< gamemostrap2[i][j] << "\e[0;0m";
                                 cout << "|";
-                            }else{
-                                cout << gamemostrap1[i][j];
+                            }
+                            else{
+                                cout << "\e[0;31m"<< gamemostrap2[i][j] << "\e[0;0m";
                                 cout << "|";
                             }
                         }
@@ -3909,14 +3939,30 @@ struct BNaval{
                     }
                     cout << endl;
 
+
                     cout << "Voce acertou uma embarcacao!" << endl;
+
+
+                    if(pontosp1 == 20){
+                        Sleep(1000);
+                        system("cls");
+                        cout << "==============================" << endl;
+                        cout << " PARABENS O JOGADOR 1 VENCEU!" << endl;
+                        cout << "==============================" << endl;
+                        cout << endl;
+                        cout << "Tecle enter para retornar ao menu..." << endl;
+                        cin.get();
+                        jvelha_menu();
+                        system("cls");
+                    }
+                    Sleep(1000);
                     cout << "Tecle enter para continuar..." << endl;
                     cin.get();
                     system("cls");
                 }else{
                     alternaplayer = 2;
                     game2[linha-1][coluna-1] = "~";
-                    gamemostrap1[linha-1][coluna-1] = "~";
+                    gamemostrap2[linha-1][coluna-1] = "~";
 
                     cout << "-----------------------" << endl;
                     cout << "   ";
@@ -3931,13 +3977,15 @@ struct BNaval{
                         }else
                         cout << i +1<< "|";
                         for (int j = 0; j < 10 ;++j){
-                            if(j == 9){
-                                cout << gamemostrap1[i][j];
-                                cout << "|";
-                            }else{
-                                cout << gamemostrap1[i][j];
+                            if(gamemostrap2[i][j] == "~"){
+                                cout << "\e[0;34m"<< gamemostrap2[i][j] << "\e[0;0m";
                                 cout << "|";
                             }
+                            else{
+                                cout << "\e[0;31m"<< gamemostrap2[i][j] << "\e[0;0m";
+                                cout << "|";
+                            }
+
                         }
                         cout << endl;
                         cout << "-----------------------" << endl;
@@ -3958,18 +4006,39 @@ struct BNaval{
 
             int linha, coluna;
             do{
-                cout << "=====JOGADOR 2=====" << endl;
-                cout << " Faca sua jogada:" << endl;
-                cout << "Linha desejada (1 ao 10): " ;
-                cin >> linha;
-                cin.ignore(80,'\n');
-                cout << "Coluna desejada (1 ao 10): " ;
-                cin >> coluna;
-                cin.ignore(80,'\n');
 
-                if(game[linha-1][coluna-1] != " "){
+                do{
+                    cout << "=====JOGADOR 2=====" << endl;
+                    cout << " Faca sua jogada:" << endl;
+
+                    do{
+                        cout << "Linha desejada (1 ao 10): " ;
+                        cin >> linha;
+                        cin.ignore(80,'\n');
+                        if(linha < 1 || linha > 10){
+                            system("cls");
+                            cout << "Insira um numero valido, insira a linha novamente!" << endl;
+                        }
+                    }while(linha < 1 || linha > 10);
+                    do{
+                        cout << "Coluna desejada (1 ao 10): " ;
+                        cin >> coluna;
+                        cin.ignore(80,'\n');
+                        if(coluna < 1 || coluna > 10){
+                            system("cls");
+                            cout << "Insira um numero valido, insira a coluna novamente! " << endl;
+                        }
+                    }while(coluna < 1 || coluna > 10);
+                     if(game[linha-1][coluna-1] == "F" || game[linha-1][coluna-1] == "~"){
+                        system("cls");
+                        cout << "Essa jogada ja foi feita, jogue em uma outra posicao!" << endl;
+                     }
+                }while(game[linha-1][coluna-1] == "F" || game[linha-1][coluna-1] == "~");
+
+                if(game[linha-1][coluna-1] == "X"){
                     game[linha-1][coluna-1] = "F";
-                    gamemostrap2[linha-1][coluna-1] = "F";
+                    gamemostrap1[linha-1][coluna-1] = "F";
+                    ++pontosp2;
 
                     cout << "-----------------------" << endl;
                     cout << "   ";
@@ -3984,11 +4053,12 @@ struct BNaval{
                         }else
                         cout << i +1<< "|";
                         for (int j = 0; j < 10 ;++j){
-                            if(j == 9){
-                                cout << gamemostrap2[i][j];
+                            if(gamemostrap1[i][j] == "~"){
+                                cout << "\e[0;34m"<< gamemostrap1[i][j] << "\e[0;0m";
                                 cout << "|";
-                            }else{
-                                cout << gamemostrap2[i][j];
+                            }
+                            else{
+                                cout << "\e[0;31m"<< gamemostrap1[i][j] << "\e[0;0m";
                                 cout << "|";
                             }
                         }
@@ -3998,13 +4068,27 @@ struct BNaval{
                     cout << endl;
 
                     cout << "Voce acertou uma embarcacao!" << endl;
+
+
+                    if(pontosp2 == 20){
+                        Sleep(1000);
+                        system("cls");
+                        cout << "==============================" << endl;
+                        cout << " PARABENS O JOGADOR 2 VENCEU!" << endl;
+                        cout << "==============================" << endl;
+                        cout << endl;
+                        cout << "Tecle enter para retornar ao menu..." << endl;
+                        cin.get();
+                        jvelha_menu();
+                    }
+                     Sleep(1000);
                     cout << "Tecle enter para continuar..." << endl;
                     cin.get();
                     system("cls");
                 }else{
-                    alternaplayer = 2;
+                    alternaplayer = 1;
                     game[linha-1][coluna-1] = "~";
-                    gamemostrap2[linha-1][coluna-1] = "~";
+                    gamemostrap1[linha-1][coluna-1] = "~";
 
                     cout << "-----------------------" << endl;
                     cout << "   ";
@@ -4019,11 +4103,12 @@ struct BNaval{
                         }else
                         cout << i +1<< "|";
                         for (int j = 0; j < 10 ;++j){
-                            if(j == 9){
-                                cout << gamemostrap2[i][j];
+                            if(gamemostrap1[i][j] == "~"){
+                                cout << "\e[0;34m"<< gamemostrap1[i][j] << "\e[0;0m";
                                 cout << "|";
-                            }else{
-                                cout << gamemostrap2[i][j];
+                            }
+                            else{
+                                cout << "\e[0;31m"<< gamemostrap1[i][j] << "\e[0;0m";
                                 cout << "|";
                             }
                         }
@@ -4031,6 +4116,7 @@ struct BNaval{
                         cout << "-----------------------" << endl;
                     }
                     cout << endl;
+
 
                     cout << "Nenhuma embarcacao nesta posicao!" << endl;
                     cout << "Vez do jogador 1!" << endl;
@@ -4081,7 +4167,210 @@ struct BNaval{
 };
 
 
-int main(){
+//Esta Struct possui todos as funï¿½ï¿½es e elementos necessario para um bom desempenho da estrututra de FILA.
+struct Fila_struct{
+
+    int Fila[50];
+
+    void Fila_menu( ){
+        int contador = 0;
+        int opcao;
+        Fila_struct itemMenu;
+
+        do{
+            cout << "===========================" << endl;
+            cout << "          Menu Fila" << endl;
+            cout << "===========================" << endl;
+            cout << " 1 - Adicionar Elemento. " << endl;
+            cout << " 2 - Remover Elemento. " << endl;
+            cout << " 3 - Visualizar Elementos. " << endl;
+            cout << " 0 - Sair " << endl;
+            cin >> opcao;
+            cin.ignore(80,'\n');
+            Sleep(200);
+            system("cls");
+            if(opcao == 1){
+                contador += 1;
+            }
+            if(opcao == 2)
+            {
+                contador--;
+            }
+
+            switch(opcao){
+
+                case 1: itemMenu.Adicionar_Elementos_Fila(contador);
+                break;
+                case 2: itemMenu.Remover_Elemento_Fila(contador);
+                break;
+                case 3: itemMenu.Visualizar_Elementos_Fila(contador);
+                break;
+
+            }
+
+        }while(opcao != 0);
+    }
+
+        void Adicionar_Elementos_Fila(int contador){
+            cout<<"----------------------"<<endl;
+            cout<<" Inserindo elementos:"<<endl;
+            cout<<"----------------------"<<endl;
+            for(int i = contador-1; i <= contador-1; ++i){
+                    cout << i+1 << "* elemento:";
+                    cin >> Fila[i] ;
+            }
+            Sleep(200);
+            system("cls");
+        }
+
+         void Visualizar_Elementos_Fila(int contador){
+             if(contador == -1 || contador == 0){
+                cout << "Nao existe elementos na fila." << endl;
+                cout << endl;
+                cout << "Tecle <Enter> para voltar ao menu.";
+                cin.get();
+                system("cls");
+                }
+                else{
+                    cout << "--------------------" << endl;
+                    cout << "Elementos inseridos:" << endl;
+                    cout << "--------------------" << endl;
+
+                    for(int i = 0; i <= contador-1; ++i){
+                        cout << i+1 << "* elemento:" << Fila[i] << endl;
+                        }
+                    cout << endl;
+                    cout << "Tecle <Enter> para voltar ao menu.";
+                    cin.get();
+                    system("cls");
+                }
+                ;
+
+         };
+
+          void Remover_Elemento_Fila(int contador){
+            if(contador == -1){
+                cout << "Nao existe elementos na fila." << endl;
+                Sleep(300);
+                system("cls");}
+            else
+            {
+                cout << "-------------------" << endl;
+                cout << " Elemento Removido " << endl;
+                cout << "-------------------" << endl;
+            }
+           for(int i = 0; i <= contador-1; ++i){
+                    Fila[i] = Fila[i+1];
+            }
+            Sleep(500);
+            system("cls");
+
+        }
+
+};
+
+
+//Esta Struct possui todos as funï¿½ï¿½es e elementos necessario para um bom desempenho da estrututra de PILHA.
+struct Pilha_struct{
+    int Pilha[50];
+
+
+        void Adicionar_Elementos_Pilha(int contador){
+            cout<<"----------------------"<<endl;
+            cout<<" Inserindo elementos:"<<endl;
+            cout<<"----------------------"<<endl;
+                for(int i = contador-1; i <= contador-1; ++i){
+                        cout << i+1 << "* Elemento:";
+                        cin >> Pilha[i] ;
+                }
+            Sleep(200);
+            system("cls");
+            }
+
+         void Visualizar_Elementos_Pilha(int contador){
+
+             if(contador == -1 || contador == 0){
+                cout << "Nao existe elementos na pilha." << endl;
+                cout << "Tecle <Enter> para voltar ao menu.";
+                cin.get();
+                system("cls");}
+
+             else{
+                    cout << "--------------------" << endl;
+                    cout << "Elementos inseridos: " << endl;
+                    cout << "--------------------" << endl;
+
+                    for(int i = 0; i <= contador-1; ++i){
+
+                        cout << i+1 << "* elementos:" << Pilha[i] << endl;
+                    }
+                cout << "Tecle <Enter> para voltar ao menu.";
+                cin.get();
+                system("cls");
+
+             }
+
+
+         }
+
+          void Remover_Elemento_Pilha(int contador){
+
+            if(contador == -1){
+                cout << "Nao existe elementos na pilha." << endl;
+                Sleep(300);
+                system("cls");}
+            else
+            {
+                cout << "-------------------" << endl;
+                cout << " Elemento Removido " << endl;
+                cout << "-------------------" << endl;
+            }
+            Sleep(500);
+            system("cls");
+
+        }
+
+        void Pilha_menu( ){
+            int contador = 0;
+            int opcao;
+            Pilha_struct itemMenu;
+
+            do{
+                cout << "===========================" << endl;
+                cout << "         Menu Pilha" << endl;
+                cout << "===========================" << endl;
+                cout << " 1 - Adicionar Elemento. " << endl;
+                cout << " 2 - Remover Elemento. " << endl;
+                cout << " 3 - Visualizar Elementos. " << endl;
+                cout << " 0 - Sair " << endl;
+                cin >> opcao;
+                cin.ignore(80,'\n');
+                Sleep(200);
+                system("cls");
+                if(opcao == 1){
+                    contador += 1;
+                }
+                if(opcao == 2)
+                {
+                    contador--;
+                }
+
+                switch(opcao){
+
+                    case 1: itemMenu.Adicionar_Elementos_Pilha(contador);
+                    break;
+                    case 2: itemMenu.Remover_Elemento_Pilha(contador);
+                    break;
+                    case 3: itemMenu.Visualizar_Elementos_Pilha(contador);
+                    break;
+
+                }
+            }while(opcao != 0);
+
+    }
+};
+
+void jvelha_menu(){
     int jogador = 1;
     int opcao;
     do{
@@ -4101,13 +4390,54 @@ int main(){
         switch(opcao){
             case 1: escolha1.jogovelhachama();
             break;
-            case 2: escolha2.bnavalchama(jogador);
+                case 2: escolha2.bnavalchama(jogador);
+                break;
+            case 0: cout << "Retornando ao Menu Principal..." <<endl;
+                    Sleep(700);
+                    system("cls");
             break;
             default:
                 cout << "Opcao Invalida." <<endl;
                 Sleep(500);
                 system("cls");
-           break;
+                break;
         }
     } while(opcao != 0);
+}
+
+int main(void){
+    int opcao;
+
+
+do{
+
+    Fila_struct escolha1;
+    Pilha_struct escolha2;
+    cout << "==============" << endl;
+    cout << "     Menu" << endl;
+    cout << "==============" << endl;
+    cout << " 1 - FILA " << endl;
+    cout << " 2 - PILHA " << endl;
+    cout << " 3 - VETOR/MATRIZ" <<endl;
+    cout << " 0 - SAIR " << endl;
+    cin >> opcao;
+    cin.ignore(80,'\n');
+    Sleep(200);
+    system("cls");
+
+    switch(opcao){
+
+        case 1: escolha1.Fila_menu();
+        break;
+        case 2: escolha2.Pilha_menu();
+        break;
+        case 3: jvelha_menu();
+        break;
+        case 0: break;
+        default:
+            cout << "Opcao Invalida." <<endl; Sleep(500); system("cls");
+        break;
+
+    }
+}while(opcao != 0);
 }
